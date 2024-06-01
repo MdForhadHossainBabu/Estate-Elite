@@ -3,13 +3,16 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 import { FcGoogle } from 'react-icons/fc';
-import { FaGithub } from 'react-icons/fa';
+import { FaEye, FaEyeSlash, FaGithub } from 'react-icons/fa';
+import { useState } from "react";
 
 
 
 const Login = () => {
- const { signIn, googleLogin, githubLogin } = useAuth();
- const location = useLocation();
+  const { signIn, googleLogin, githubLogin } = useAuth();
+  const [isOpen, setIsOpen]= useState(false)
+  const location = useLocation();
+  console.log(location);
  const navigate  = useNavigate()
  
  // login with google 
@@ -45,9 +48,10 @@ const Login = () => {
       navigate('/');
      toast.success(`${res.email} login successfully`)
     })
-   };
+  };
+  
  return (
-   <div className="border max-w-screen-xl mx-auto">
+   <div className="max-w-screen-xl mx-auto h-[95vh] my-4">
      <h2 className="text-4xl font-bold font-space text-center text-orange-500 my-4 mt-12">
        Login Now
      </h2>
@@ -57,33 +61,36 @@ const Login = () => {
      >
        <div className="flex flex-col space-y-2 w-full lg:w-1/2">
          <span>
-           Name<span className="text-orange-500">*</span>
+           Email<span className="text-orange-500">*</span>
          </span>
          <input
-           className="border px-2 py-2 outline-none"
+           className="border px-2 py-2 outline-none "
            type="email"
            {...register('email')}
            placeholder="Type Current Email*"
            id=""
          />
        </div>
-       <div className="flex flex-col space-y-2 w-full lg:w-1/2">
+       <div className="flex flex-col space-y-2 w-full lg:w-1/2 relative">
          <span>
            Password<span className="text-orange-500">*</span>
          </span>
          <input
            className="border px-2 py-2 outline-none"
-           type="password"
+           type={isOpen ? 'text' : 'password'}
            {...register('password')}
            placeholder="Type Current Password*"
            id=""
          />
+         <span className="absolute top-10 right-4 text-lg" onClick={() => setIsOpen(!isOpen)}>
+           {isOpen ? <FaEyeSlash /> : <FaEye />}
+         </span>
        </div>
        <button className=" py-3 rounded w-full lg:w-1/2 bg-orange-500 text-white font-bold font-space">
          LOGIN NOW
        </button>
      </form>
-     <div className="w-1/2 mx-auto ">
+     <div className="w-1/2 mx-auto mt-12 space-y-6">
        <div className="divider  text-orange-500 mx-12">or continue with</div>
        <div className="w-1/2 mx-auto">
          <div className="flex items-center gap-6 justify-center my-2">
@@ -103,10 +110,10 @@ const Login = () => {
              Github
            </button>
          </div>
-         <div className="flex justify-end my-3">
+         <div className="flex justify-end lg:my-3 mt-6">
            <h1>
              Do not have an account ?
-             <Link to="/sign-up" className="text-orange-500 ml-1">
+             <Link to="/sign-up" className="text-orange-500 lg:ml-1">
                Register Now
              </Link>
            </h1>
