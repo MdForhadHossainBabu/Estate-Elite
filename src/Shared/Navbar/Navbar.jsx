@@ -55,10 +55,9 @@ const Navbar = () => {
    </>
  );
 
- console.log(isOpen ? 'open' : 'close');
  return (
-   <div>
-     <nav className="flex items-center justify-between border-2 py-1 bg-slate-200 shadow-lg sticky">
+   <div className="fixed w-full max-w-screen-xl z-20">
+     <nav className="flex items-center justify-between bg-slate-200 h-14">
        <div>
          <h1 className="text-3xl font-bold flex items-center gap-0 text-rose-500 font-poppins">
            Estate<span className="text-orange-500">Elite</span>
@@ -70,7 +69,7 @@ const Navbar = () => {
          </ul>
        </div>
        <div>
-         <ul className="border-2 border-red-300 flex items-center gap-2 lg:pl-0 rounded-full px-2">
+         <ul className="border-2 border-red-300 flex items-center gap-2 lg:pl-0 rounded-full px-2 bg-white shadow-2xl drop-shadow-2xl">
            <span>
              <GiHamburgerMenu
                onClick={() => setIsOpen(!isOpen)}
@@ -78,7 +77,14 @@ const Navbar = () => {
              />
            </span>
            {user && (
-             <img className="w-8 h-8 rounded-full" src={user.photoURL} alt="" />
+             <img
+               className="w-8 h-8 rounded-full"
+               src={
+                 user.photoURL ||
+                 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh1MxDvWeEQ39D04ETGLuJ_pnSkd_gZf47R7qkQaxbHotxVs-aBvYjsHmbvxcKhTGn9gI&usqp=CAU'
+               }
+               alt=""
+             />
            )}
            <span className="text-2xl" onClick={() => setTheme(!theme)}>
              {theme ? <FaSun /> : <FaMoon />}

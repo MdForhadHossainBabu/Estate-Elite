@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "property_image": "https://example.com/image1.jpg",
+    "property_location": "123 Main St, Springfield, IL",
+    "price_range": "$200,000 - $250,000",
+    "verification_status": "verified"
+  },
+  {
+    "id": 2,
+    "property_image": "https://example.com/image2.jpg",
+    "property_location": "456 Elm St, Shelbyville, IL",
+    "price_range": "$150,000 - $200,000",
+    "verification_status": "pending"
+  },
+  {
+    "id": 3,
+    "property_image": "https://example.com/image3.jpg",
+    "property_location": "789 Oak St, Capital City, IL",
+    "price_range": "$300,000 - $350,000",
+    "verification_status": "verified"
+  },
+  {
+    "id": 4,
+    "property_image": "https://example.com/image4.jpg",
+    "property_location": "101 Pine St, Ogdenville, IL",
+    "price_range": "$100,000 - $150,000",
+    "verification_status": "not verified"
+  },
+  {
+    "id": 5,
+    "property_image": "https://example.com/image5.jpg",
+    "property_location": "202 Maple St, North Haverbrook, IL",
+    "price_range": "$250,000 - $300,000",
+    "verification_status": "verified"
+  },
+  {
+    "id": 6,
+    "property_image": "https://example.com/image6.jpg",
+    "property_location": "303 Birch St, Brockway, IL",
+    "price_range": "$350,000 - $400,000",
+    "verification_status": "pending"
+  }
+]

@@ -12,14 +12,13 @@ const Login = () => {
   const { signIn, googleLogin, githubLogin } = useAuth();
   const [isOpen, setIsOpen]= useState(false)
   const location = useLocation();
-  console.log(location);
  const navigate  = useNavigate()
- 
+ const from = location.state?.from?.pathname || '/';
  // login with google 
  const handleGoogle = () => {
   googleLogin().then(res => {
    console.log(res.user);
-   navigate('/')
+ navigate(from, { replace: true });
    toast.success(`login successfully`)
   })
    .catch(error => {
@@ -31,8 +30,8 @@ const Login = () => {
   githubLogin()
    .then(res => {
     console.log(res.user);
-     navigate('/');
-      toast.success(`login successfully`);
+    toast.success(`login successfully`);
+    navigate(from, { replace: true });
     })
     .catch(error => {
       toast.error(error);
@@ -45,8 +44,8 @@ const Login = () => {
     console.log(data);
     const { email, password } = data;
     signIn(email, password).then(res => {
-      navigate('/');
-     toast.success(`${res.email} login successfully`)
+      toast.success(`${res.email} login successfully`)
+      navigate(from, { replace: true });
     })
   };
   

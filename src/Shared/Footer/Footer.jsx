@@ -2,7 +2,7 @@ import { FaFacebook, FaGithub, FaReddit } from "react-icons/fa";
 
 const Footer = () => {
  return (
-   <div className="bg-slate-200 max-w-screen-xl mx-auto h-">
+   <div className="bg-slate-200 max-w-screen-xl mx-auto font-mono">
      <footer className="bg-white dark:bg-gray-900">
        <div className="container p-6 mx-auto">
          <div className="lg:flex">
@@ -14,7 +14,7 @@ const Footer = () => {
                  </h1>
                </a>
 
-               <p className="max-w-sm mt-2 text-gray-500 dark:text-gray-400">
+               <p className="max-w-sm mt-2 text-gray-500 dark:text-gray-400 font-mono">
                  Putting these two words together, EstateElite suggests a
                  platform or service that deals with high-end, exclusive real
                  estate properties
@@ -106,19 +106,19 @@ const Footer = () => {
                    href="#"
                    className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
                  >
-                   Mega cloud
+                   Mega properties
                  </a>
                  <a
                    href="#"
                    className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
                  >
-                   Aperion UI
+                   Properties
                  </a>
                  <a
                    href="#"
                    className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
                  >
-                   Meraki UI
+                   Estate Elite
                  </a>
                </div>
 
@@ -127,7 +127,7 @@ const Footer = () => {
                    Contact
                  </h3>
                  <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">
-                   +1 526 654 8965
+                   +88 015 400 727 82
                  </span>
                  <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">
                    estateelite@email.com

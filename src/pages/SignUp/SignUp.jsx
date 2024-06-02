@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { FaGithub } from "react-icons/fa";
+import {
+  FaGithub
+} from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
@@ -149,7 +151,7 @@ const SignUp = () => {
           </span>
         </div>
 
-        <button className=" py-3 rounded w-full lg:w-1/2 bg-orange-500 text-white font-bold font-space">
+        <button className=" py-3 rounded w-full lg:w-1/2 bg-orange-500 text-white font-bold font-space outline-none">
           REGISTER NOW
         </button>
       </form>
