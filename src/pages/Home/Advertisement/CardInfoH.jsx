@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 
 
 const CardInfoH = ({ cardInfo }) => {
- console.log(cardInfo);
- const {property_image, property_location, verification_status, price_range, id} = cardInfo;
+//  console.log(cardInfo);
+  const { property_image, property_location, verification_status, price_range, _id } = cardInfo;
+  
  return (
-   <Link to={`/wishlist/${id}`}>
-     <div className="border rounded-lg">
+   <Link to={`/cardInfoDetails/${_id}`}>
+     <div className="border-2 p-2 bg-slate-200 rounded-lg drop-shadow-2xl shadow-2xl ">
        <figure>
          <img
            className="rounded-lg"

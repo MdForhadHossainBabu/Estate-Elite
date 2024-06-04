@@ -1,0 +1,92 @@
+[
+  {
+    "property_image": "https://example.com/property1.jpg",
+    "property_title": "Spacious 3 Bedroom Apartment",
+    "property_location": "123 Main Street, Springfield",
+    "agent_name": "John Doe",
+    "agent_image": "https://example.com/agent1.jpg",
+    "verification_status": "Verified",
+    "price_range": "$200,000 - $250,000"
+  },
+  {
+    "property_image": "https://example.com/property2.jpg",
+    "property_title": "Cozy Cottage with Garden",
+    "property_location": "456 Elm Street, Oakwood",
+    "agent_name": "Jane Smith",
+    "agent_image": "https://example.com/agent2.jpg",
+    "verification_status": "Not Verified",
+    "price_range": "$150,000 - $180,000"
+  },
+  {
+    "property_image": "https://example.com/property3.jpg",
+    "property_title": "Modern Loft in Downtown",
+    "property_location": "789 Pine Avenue, Metropolis",
+    "agent_name": "Alice Johnson",
+    "agent_image": "https://example.com/agent3.jpg",
+    "verification_status": "Verified",
+    "price_range": "$300,000 - $350,000"
+  },
+  {
+    "property_image": "https://example.com/property4.jpg",
+    "property_title": "Luxury Villa with Pool",
+    "property_location": "1010 Luxury Lane, Beverly Hills",
+    "agent_name": "Bob Brown",
+    "agent_image": "https://example.com/agent4.jpg",
+    "verification_status": "Verified",
+    "price_range": "$2,000,000 - $2,500,000"
+  },
+  {
+    "property_image": "https://example.com/property5.jpg",
+    "property_title": "Charming Bungalow",
+    "property_location": "2020 Country Road, Countryside",
+    "agent_name": "Sara White",
+    "agent_image": "https://example.com/agent5.jpg",
+    "verification_status": "Not Verified",
+    "price_range": "$180,000 - $220,000"
+  },
+  {
+    "property_image": "https://example.com/property6.jpg",
+    "property_title": "Contemporary Townhouse",
+    "property_location": "3030 City Drive, Urbania",
+    "agent_name": "Mike Green",
+    "agent_image": "https://example.com/agent6.jpg",
+    "verification_status": "Verified",
+    "price_range": "$400,000 - $450,000"
+  },
+  {
+    "property_image": "https://example.com/property7.jpg",
+    "property_title": "Historic Manor",
+    "property_location": "4040 Heritage Blvd, Oldtown",
+    "agent_name": "Linda Blue",
+    "agent_image": "https://example.com/agent7.jpg",
+    "verification_status": "Not Verified",
+    "price_range": "$1,200,000 - $1,500,000"
+  },
+  {
+    "property_image": "https://example.com/property8.jpg",
+    "property_title": "Beachfront Condo",
+    "property_location": "5050 Oceanview Dr, Seaside",
+    "agent_name": "Gary Black",
+    "agent_image": "https://example.com/agent8.jpg",
+    "verification_status": "Verified",
+    "price_range": "$750,000 - $800,000"
+  },
+  {
+    "property_image": "https://example.com/property9.jpg",
+    "property_title": "Mountain Cabin",
+    "property_location": "6060 Pine Road, Highland",
+    "agent_name": "Nina Yellow",
+    "agent_image": "https://example.com/agent9.jpg",
+    "verification_status": "Not Verified",
+    "price_range": "$350,000 - $400,000"
+  },
+  {
+    "property_image": "https://example.com/property10.jpg",
+    "property_title": "Urban Studio Apartment",
+    "property_location": "7070 Metro St, Capital City",
+    "agent_name": "Oscar Orange",
+    "agent_image": "https://example.com/agent10.jpg",
+    "verification_status": "Verified",
+    "price_range": "$250,000 - $300,000"
+  }
+]

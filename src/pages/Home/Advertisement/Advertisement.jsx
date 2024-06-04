@@ -6,10 +6,13 @@ import CardInfoH from "./CardInfoH";
 
 const Advertisement = () => {
  const [cards, setCards] = useState([]);
- console.log(cards);
+//  console.log(cards);
  useEffect(() => {
-  fetch('advertisement.json').then(res => res.json()).then(data => setCards(data))
- },[])
+  fetch(`http://localhost:5000/advertisement`)
+    .then(res => res.json())
+    .then(data => setCards(data));
+ }, [])
+
  return (
    <div>
      <h2 className="text-center font-bold text-rose-500">
@@ -20,7 +23,7 @@ const Advertisement = () => {
      </h2>
      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-center px-4 my-4">
        {cards.map(item => (
-         <CardInfoH key={item.id} cardInfo={item} />
+         <CardInfoH key={item._id} cardInfo={item} />
        ))}
      </div>
    </div>

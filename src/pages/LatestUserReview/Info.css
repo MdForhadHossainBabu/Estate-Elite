@@ -1,0 +1,6 @@
+#imgStyle{
+border-radius: 0 50% 50% 50% ;
+}
+.shadowApply{
+ box-shadow: 5px 5px 5px slategray;
+}

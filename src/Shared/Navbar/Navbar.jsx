@@ -24,9 +24,9 @@ const Navbar = () => {
  }
  const navLinks = (
    <>
-     <NavLink
+     <NavLink to="/"
        className={({ isActive }) =>
-         isActive ? 'border-b border-orange-500 ' : ' '
+         isActive ? 'border-b border-orange-500 ' : '  text-black'
        }
      >
        Home
@@ -34,15 +34,15 @@ const Navbar = () => {
      <NavLink
        to="/all-properties"
        className={({ isActive }) =>
-         isActive ? 'border-b border-orange-500 ' : ' '
+         isActive ? 'border-b border-orange-500 ' : '  text-black'
        }
      >
        All Properties
      </NavLink>
-   <NavLink
-    to="/Dashboard"
+     <NavLink
+       to="/Dashboard"
        className={({ isActive }) =>
-         isActive ? 'border-b border-orange-500 ' : ' '
+         isActive ? 'border-b border-orange-500 ' : '  text-black'
        }
      >
        Dashboard

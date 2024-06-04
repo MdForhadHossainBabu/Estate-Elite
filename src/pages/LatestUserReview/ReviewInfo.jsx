@@ -1,55 +1,48 @@
-import { Link } from "react-router-dom";
-
+import { Rating } from "@smastrom/react-rating";
+import { useState } from "react";
+import './Info.css'
 
 const ReviewInfo = ({ reviewInfo }) => {
- const {
-   property_image,
-   property_location,
-   verification_status,
-   price_range,
-
- } = reviewInfo;
- return (
-   <>
-     <div className="border rounded-lg">
-       <figure>
-         <img
-           className="rounded-lg"
-           src={
-             'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg' ||
-             property_image
-           }
-           alt="photo"
-         />
-       </figure>
-       <div className="flex items-center justify-between px-4">
-         <span>
-           <small>Price : {price_range}</small>
-         </span>
-         <span
-           className={`${
-             verification_status == 'verified' &&
-             'text-green-500 border-b border-green-500'
-           } ${
-             verification_status == 'not verified' &&
-             'text-red-500 border-b border-red-500'
-           }
-         ${
-           verification_status == 'pending' &&
-           'text-amber-500 border-b border-amber-500'
-         }
-      `}
-         >
-           {verification_status}
-         </span>
-       </div>
-       <div className="card-body">
-         <h2 className="text-balance">{property_location}</h2>
-         <p>If a dog chews shoes whose shoes does he choose?</p>
-       </div>
-     </div>
-   </>
- );
+  const [rating, setRating] = useState(0);
+  const { reviewer_image, reviewer_name, review_description, property_title } =
+    reviewInfo;
+  return (
+    <>
+      <div className="border-2 p-4 my-4 bg-slate-200 rounded-lg shadowApply">
+        <span className="text-6xl font-space text-rose-500 font-bold">“</span>
+        <div className="flex items-center gap-4">
+          <div>
+            <img
+              id="imgStyle"
+              className="w-14 h-14 "
+              src={
+                'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg' ||
+                reviewer_image
+              }
+              alt=""
+            />
+          </div>
+          <div>
+            {/* rating */}
+            <Rating
+              style={{ maxWidth: 180 }}
+              value={rating}
+              onChange={setRating}
+              isRequired
+            />
+          </div>
+        </div>
+        {/* name */}
+        <div className=" text-balance">
+          <h1 className="font-bold font-poppins opacity-85">{reviewer_name}</h1>
+          <h2 className="font-bold font-space text-orange-500">
+            {property_title}
+          </h2>
+          <p className="font-mono">{review_description}</p>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default ReviewInfo;

@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "reviewer_name": "John Doe",
+    "reviewer_image": "https://example.com/images/john_doe.jpg",
+    "review_description": "This property was amazing! The views were spectacular and the service was top-notch.",
+    "property_title": "Oceanfront Villa"
+  },
+  {
+    "id": 2,
+    "reviewer_name": "Jane Smith",
+    "reviewer_image": "https://example.com/images/jane_smith.jpg",
+    "review_description": "The property was decent, but the location was a bit far from the main attractions.",
+    "property_title": "City Center Apartment"
+  },
+  {
+    "id": 3,
+    "reviewer_name": "Alice Johnson",
+    "reviewer_image": "https://example.com/images/alice_johnson.jpg",
+    "review_description": "Absolutely loved the rustic charm of this property. Perfect for a quiet getaway.",
+    "property_title": "Countryside Cottage"
+  }
+]
