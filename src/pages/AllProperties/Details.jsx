@@ -1,11 +1,14 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 
 const Details = () => {
  const properties = useLoaderData();
  const { user } = useAuth();
- console.log(properties);
+ const axiosSecure = useAxiosSecure();
+ // console.log(properties);
  const {
    agent_name,
    price_range,
@@ -15,8 +18,32 @@ const Details = () => {
    _id,
    property_image,
  } = properties;
- const handleAddItem = _id => {
-  
+ const newAdd = {
+   agent_name:agent_name,
+   price_range:price_range,
+   property_location:property_location,
+   property_title:property_title,
+   verification_status:verification_status,
+
+   property_image:property_image,
+   email: user?.email,
+  name: user?.displayName,
+   image: user?.photoURL,
+ };
+ const handleAddItem = () => {
+  axiosSecure.post('/properties', newAdd, _id)
+   .then(res => {
+    console.log(res.data);
+    if (res.data.insertedId) {
+     Swal.fire({
+       position: 'top-end',
+       icon: 'success',
+       title: 'Added to this Item',
+       showConfirmButton: false,
+       timer: 1000,
+     });
+    }
+  })
  }
  return (
    <div className="border-2 p-2 bg-slate-200 rounded-lg drop-shadow-2xl shadow-2xl space-y-3 py-4 w-1/2 mx-auto my-12">
