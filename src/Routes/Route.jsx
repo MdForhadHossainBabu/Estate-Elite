@@ -13,6 +13,8 @@ import SingleInfo from "../pages/Home/Advertisement/SingleInfo";
 import Details from "../pages/AllProperties/Details";
 import Wishlist from "../pages/Dashboard/Wishlist/Wishlist";
 import UserProfile from "../pages/Dashboard/UserProfile/UserProfile";
+import PropertyBought from "../pages/Dashboard/PropertyBought/PropertyBought";
+import MyReviews from "../pages/Dashboard/MyReviews/MyReviews";
 
 const router = createBrowserRouter([
   {
@@ -32,14 +34,14 @@ const router = createBrowserRouter([
         path: 'details/:id',
         element: <Details />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/properties/${params.id}`),
+          fetch(`${import.meta.env.VITE_API_URL}/properties/${params.id}`),
       },
 
       {
         path: 'cardInfoDetails/:id',
         element: <SingleInfo />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/advertisement/${params.id}`),
+          fetch(`${import.meta.env.VITE_API_URL}/advertisement/${params.id}`),
       },
     ],
   },
@@ -81,6 +83,14 @@ const router = createBrowserRouter([
         path: 'Dashboard/my-profile',
         element: <UserProfile />,
       },
+      {
+        path: 'Dashboard/property-bought',
+        element: <PropertyBought/>
+      },
+      {
+        path: 'Dashboard/my-reviews',
+        element: <MyReviews/>
+      }
     ],
   },
 ]);

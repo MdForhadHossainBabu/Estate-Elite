@@ -4,7 +4,7 @@ import {  FaArrowLeft,  FaList,  FaSellcast,  FaShopify, FaStar, FaStreetView, F
 import {  NavLink, Outlet } from 'react-router-dom';
 const Dashboard = () => {
  const [open, setOpen] = useState(true)
- // const isAdmin = false;
+ const isAdmin = true;
  const [on, setOn] = useState(false);
  
  return (
@@ -58,240 +58,234 @@ const Dashboard = () => {
          </div>
          {/* user route */}
 
-         {!on && (
-           <div className="mt-12 ">
-             {/* route 1 */}
-             <NavLink
-               to="Dashboard/my-profile"
-               className={({ isActive }) =>
-                 isActive ? 'text-white ' : '  text-black'
-               }
+        {isAdmin === true && <div className="mt-12 ">
+           {/* route 1 */}
+           <NavLink
+             to="Dashboard/my-profile"
+             className={({ isActive }) =>
+               isActive ? 'text-white ' : '  text-black'
+             }
+           >
+             <h1
+               className={`font-medium font-mono flex items-center gap-3 px-3`}
              >
-               <h1
-                 className={`font-medium font-mono flex items-center gap-3 px-3`}
-               >
-                 <FaUser className={`${!open && 'mx-auto text-4xl'}`} />
-                 <span className={`${!open && 'hidden'} duration-700`}>
-                   My Profile
-                 </span>
-               </h1>
-             </NavLink>
-             {/* route 2 */}
-             <NavLink
-               to="Dashboard/wishlist"
-               className={({ isActive }) =>
-                 isActive ? 'text-white ' : '  text-black'
-               }
+               <FaUser className={`${!open && 'mx-auto text-4xl'}`} />
+               <span className={`${!open && 'hidden'} duration-700`}>
+                 My Profile
+               </span>
+             </h1>
+           </NavLink>
+           {/* route 2 */}
+           <NavLink
+             to="Dashboard/wishlist"
+             className={({ isActive }) =>
+               isActive ? 'text-white ' : '  text-black'
+             }
+           >
+             <h1
+               className={`font-medium font-mono flex items-center gap-3 px-3`}
              >
-               <h1
-                 className={`font-medium font-mono flex items-center gap-3 px-3`}
-               >
-                 <FaList
-                   className={`${!open && 'mx-auto text-4xl my-6'} ${
-                     open && 'my-6'
-                   }`}
-                 />
-                 <span className={`${!open && 'hidden'} duration-700`}>
-                   Wishlist
-                 </span>
-               </h1>
-             </NavLink>
-             {/* route 3 */}
-             <NavLink
-               to="Dashboard/property-bought"
-               className={({ isActive }) =>
-                 isActive ? 'text-white ' : '  text-black'
-               }
+               <FaList
+                 className={`${!open && 'mx-auto text-4xl my-6'} ${
+                   open && 'my-6'
+                 }`}
+               />
+               <span className={`${!open && 'hidden'} duration-700`}>
+                 Wishlist
+               </span>
+             </h1>
+           </NavLink>
+           {/* route 3 */}
+           <NavLink
+             to="Dashboard/property-bought"
+             className={({ isActive }) =>
+               isActive ? 'text-white ' : '  text-black'
+             }
+           >
+             <h1
+               className={`font-medium font-mono flex items-center gap-3 px-3`}
              >
-               <h1
-                 className={`font-medium font-mono flex items-center gap-3 px-3`}
-               >
-                 <FaSellcast className={`${!open && 'mx-auto text-4xl'}`} />
-                 <span className={`${!open && 'hidden'} duration-700`}>
-                   Property bought
-                 </span>
-               </h1>
-             </NavLink>
-             {/* route 4 */}
-             <NavLink
-               to="Dashboard/my-reviews"
-               className={({ isActive }) =>
-                 isActive ? 'text-white ' : '  text-black'
-               }
+               <FaSellcast className={`${!open && 'mx-auto text-4xl'}`} />
+               <span className={`${!open && 'hidden'} duration-700`}>
+                 Property bought
+               </span>
+             </h1>
+           </NavLink>
+           {/* route 4 */}
+           <NavLink
+             to="Dashboard/my-reviews"
+             className={({ isActive }) =>
+               isActive ? 'text-white ' : '  text-black'
+             }
+           >
+             <h1
+               className={` font-medium font-mono flex items-center gap-3 px-3`}
              >
-               <h1
-                 className={` font-medium font-mono flex items-center gap-3 px-3`}
-               >
-                 <FaStreetView
-                   className={`${!open && 'mx-auto text-4xl my-6'} ${
-                     open && 'my-6'
-                   } `}
-                 />
-                 <span className={`${!open && 'hidden'} duration-700`}>
-                   My reviews
-                 </span>
-               </h1>
-             </NavLink>
-           </div>
-         )}
+               <FaStreetView
+                 className={`${!open && 'mx-auto text-4xl my-6'} ${
+                   open && 'my-6'
+                 } `}
+               />
+               <span className={`${!open && 'hidden'} duration-700`}>
+                 My reviews
+               </span>
+             </h1>
+           </NavLink>
+         </div>}
 
-         {on && (
-           <div className="mt-12 ">
-             {/* route 1 */}
-             <NavLink
-               to="/Dashboard"
-               end
-               className={({ isActive }) =>
-                 isActive ? 'text-white ' : '  text-black'
-               }
+         <div className="mt-12 ">
+           {/* route 1 */}
+           <NavLink
+             to="/Dashboard/agent-profile"
+             className={({ isActive }) =>
+               isActive ? 'text-white ' : '  text-black'
+             }
+           >
+             <h1
+               className={`font-medium font-mono flex items-center gap-3 px-3`}
              >
-               <h1
-                 className={`font-medium font-mono flex items-center gap-3 px-3`}
-               >
-                 <FaUser className={`${!open && 'mx-auto text-4xl'}`} />
-                 <span className={`${!open && 'hidden'} duration-700`}>
-                   Admin Profile
-                 </span>
-               </h1>
-             </NavLink>
-             {/* route 2 */}
-             <NavLink
-               to="Dashboard/manage-properties"
-               className={({ isActive }) =>
-                 isActive ? 'text-white ' : '  text-black'
-               }
+               <FaUser className={`${!open && 'mx-auto text-4xl'}`} />
+               <span className={`${!open && 'hidden'} duration-700`}>
+                 Agent Profile
+               </span>
+             </h1>
+           </NavLink>
+           {/* route 2 */}
+           <NavLink
+             to="Dashboard/add-properties"
+             className={({ isActive }) =>
+               isActive ? 'text-white ' : '  text-black'
+             }
+           >
+             <h1
+               className={`font-medium font-mono flex items-center gap-3 px-3`}
              >
-               <h1
-                 className={`font-medium font-mono flex items-center gap-3 px-3`}
-               >
-                 <FaShopify
-                   className={`${!open && 'mx-auto text-4xl my-6'} ${
-                     open && 'my-6'
-                   }`}
-                 />
-                 <span className={`${!open && 'hidden'} duration-700`}>
-                   Manage Properties
-                 </span>
-               </h1>
-             </NavLink>
-             {/* route 3 */}
-             <NavLink
-               to="Dashboard/manage-users"
-               className={({ isActive }) =>
-                 isActive ? 'text-white ' : '  text-black'
-               }
+               <FaShopify
+                 className={`${!open && 'mx-auto text-4xl my-6'} ${
+                   open && 'my-6'
+                 }`}
+               />
+               <span className={`${!open && 'hidden'} duration-700`}>
+                 Add Properties
+               </span>
+             </h1>
+           </NavLink>
+           {/* route 3 */}
+           <NavLink
+             to="Dashboard/my-sold-properties"
+             className={({ isActive }) =>
+               isActive ? 'text-white ' : '  text-black'
+             }
+           >
+             <h1
+               className={`font-medium font-mono flex items-center gap-3 px-3`}
              >
-               <h1
-                 className={`font-medium font-mono flex items-center gap-3 px-3`}
-               >
-                 <FaUsers className={`${!open && 'mx-auto text-4xl'}`} />
-                 <span className={`${!open && 'hidden'} duration-700`}>
-                   Manage Users
-                 </span>
-               </h1>
-             </NavLink>
-             {/* route 4 */}
-             <NavLink
-               to="Dashboard/manage-reviews"
-               className={({ isActive }) =>
-                 isActive ? 'text-white ' : '  text-black'
-               }
+               <FaSellcast className={`${!open && 'mx-auto text-4xl'}`} />
+               <span className={`${!open && 'hidden'} duration-700`}>
+                 My sold properties
+               </span>
+             </h1>
+           </NavLink>
+           {/* route 4 */}
+           <NavLink
+             to="Dashboard/requested-properties"
+             className={({ isActive }) =>
+               isActive ? 'text-white ' : '  text-black'
+             }
+           >
+             <h1
+               className={` font-medium font-mono flex items-center gap-3 px-3`}
              >
-               <h1
-                 className={`font-medium font-mono flex items-center gap-3 px-3`}
-               >
-                 <FaStar
-                   className={`${!open && 'mx-auto text-4xl my-6'} ${
-                     open && 'my-6'
-                   } `}
-                 />
-                 <span className={`${!open && 'hidden'} duration-700`}>
-                   Manage Reviews
-                 </span>
-               </h1>
-             </NavLink>
-           </div>
-         )}
-
-         {on && (
-           <div className="mt-12 ">
-             {/* route 1 */}
-             <NavLink
-               to="/Dashboard/agent-profile"
-               className={({ isActive }) =>
-                 isActive ? 'text-white ' : '  text-black'
-               }
+               <FaStar
+                 className={`${!open && 'mx-auto text-4xl my-6'} ${
+                   open && 'my-6'
+                 } `}
+               />
+               <span className={`${!open && 'hidden'} duration-700`}>
+                 Requested properties
+               </span>
+             </h1>
+           </NavLink>
+         </div>
+         {/* admin profile */}
+         <div className="mt-12 ">
+           {/* route 1 */}
+           <NavLink
+             to="/Dashboard/admin-profile"
+             end
+             className={({ isActive }) =>
+               isActive ? 'text-white ' : '  text-black'
+             }
+           >
+             <h1
+               className={`font-medium font-mono flex items-center gap-3 px-3`}
              >
-               <h1
-                 className={`font-medium font-mono flex items-center gap-3 px-3`}
-               >
-                 <FaUser className={`${!open && 'mx-auto text-4xl'}`} />
-                 <span className={`${!open && 'hidden'} duration-700`}>
-                   Agent Profile
-                 </span>
-               </h1>
-             </NavLink>
-             {/* route 2 */}
-             <NavLink
-               to="Dashboard/add-properties"
-               className={({ isActive }) =>
-                 isActive ? 'text-white ' : '  text-black'
-               }
+               <FaUser className={`${!open && 'mx-auto text-4xl'}`} />
+               <span className={`${!open && 'hidden'} duration-700`}>
+                 Admin Profile
+               </span>
+             </h1>
+           </NavLink>
+           {/* route 2 */}
+           <NavLink
+             to="Dashboard/manage-properties"
+             className={({ isActive }) =>
+               isActive ? 'text-white ' : '  text-black'
+             }
+           >
+             <h1
+               className={`font-medium font-mono flex items-center gap-3 px-3`}
              >
-               <h1
-                 className={`font-medium font-mono flex items-center gap-3 px-3`}
-               >
-                 <FaShopify
-                   className={`${!open && 'mx-auto text-4xl my-6'} ${
-                     open && 'my-6'
-                   }`}
-                 />
-                 <span className={`${!open && 'hidden'} duration-700`}>
-                   Add Properties
-                 </span>
-               </h1>
-             </NavLink>
-             {/* route 3 */}
-             <NavLink
-               to="Dashboard/my-sold-properties"
-               className={({ isActive }) =>
-                 isActive ? 'text-white ' : '  text-black'
-               }
+               <FaShopify
+                 className={`${!open && 'mx-auto text-4xl my-6'} ${
+                   open && 'my-6'
+                 }`}
+               />
+               <span className={`${!open && 'hidden'} duration-700`}>
+                 Manage Properties
+               </span>
+             </h1>
+           </NavLink>
+           {/* route 3 */}
+           <NavLink
+             to="Dashboard/manage-users"
+             className={({ isActive }) =>
+               isActive ? 'text-white ' : '  text-black'
+             }
+           >
+             <h1
+               className={`font-medium font-mono flex items-center gap-3 px-3`}
              >
-               <h1
-                 className={`font-medium font-mono flex items-center gap-3 px-3`}
-               >
-                 <FaSellcast className={`${!open && 'mx-auto text-4xl'}`} />
-                 <span className={`${!open && 'hidden'} duration-700`}>
-                   My sold properties
-                 </span>
-               </h1>
-             </NavLink>
-             {/* route 4 */}
-             <NavLink
-               to="Dashboard/requested-properties"
-               className={({ isActive }) =>
-                 isActive ? 'text-white ' : '  text-black'
-               }
+               <FaUsers className={`${!open && 'mx-auto text-4xl'}`} />
+               <span className={`${!open && 'hidden'} duration-700`}>
+                 Manage Users
+               </span>
+             </h1>
+           </NavLink>
+           {/* route 4 */}
+           <NavLink
+             to="Dashboard/manage-reviews"
+             className={({ isActive }) =>
+               isActive ? 'text-white ' : '  text-black'
+             }
+           >
+             <h1
+               className={`font-medium font-mono flex items-center gap-3 px-3`}
              >
-               <h1
-                 className={` font-medium font-mono flex items-center gap-3 px-3`}
-               >
-                 <FaStar
-                   className={`${!open && 'mx-auto text-4xl my-6'} ${
-                     open && 'my-6'
-                   } `}
-                 />
-                 <span className={`${!open && 'hidden'} duration-700`}>
-                   Requested properties
-                 </span>
-               </h1>
-             </NavLink>
-           </div>
-         )}
+               <FaStar
+                 className={`${!open && 'mx-auto text-4xl my-6'} ${
+                   open && 'my-6'
+                 } `}
+               />
+               <span className={`${!open && 'hidden'} duration-700`}>
+                 Manage Reviews
+               </span>
+             </h1>
+           </NavLink>
+         </div>
        </div>
      </div>
-     <div className='w-full'>
+     <div className="w-full">
        <Outlet />
      </div>
    </div>

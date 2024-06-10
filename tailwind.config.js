@@ -7,7 +7,8 @@ export default {
         roboto: "'Roboto', sans-serif",
         poppins: "'Poppins', sans-serif",
         space: " 'Space Grotesk', sans-serif",
-        nunito: " 'Nunito', sans-serif"
+        nunito: " 'Nunito', sans-serif",
+        fira: "'Fira Code', monospace"
       },
     },
   },

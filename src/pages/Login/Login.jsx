@@ -5,10 +5,12 @@ import toast from "react-hot-toast";
 import { FcGoogle } from 'react-icons/fc';
 import { FaEye, FaEyeSlash, FaGithub } from 'react-icons/fa';
 import { useState } from "react";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 
 
 const Login = () => {
+  const axiosPublic = useAxiosPublic();
   const { signIn, googleLogin, githubLogin } = useAuth();
   const [isOpen, setIsOpen]= useState(false)
   const location = useLocation();
@@ -17,8 +19,18 @@ const Login = () => {
  // login with google 
  const handleGoogle = () => {
   googleLogin().then(res => {
-   console.log(res.user);
- navigate(from, { replace: true });
+    // console.log(res.user);
+    const userInfo = {
+      email: res.user?.email,
+      name: res.user?.displayName,
+    }
+    axiosPublic.post('/users', userInfo)
+      .then(res => {
+        console.log(res.data);
+         navigate(from, { replace: true });
+    })
+
+
    toast.success(`login successfully`)
   })
    .catch(error => {
