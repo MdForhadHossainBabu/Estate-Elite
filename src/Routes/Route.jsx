@@ -15,12 +15,14 @@ import Wishlist from "../pages/Dashboard/Wishlist/Wishlist";
 import UserProfile from "../pages/Dashboard/UserProfile/UserProfile";
 import PropertyBought from "../pages/Dashboard/PropertyBought/PropertyBought";
 import MyReviews from "../pages/Dashboard/MyReviews/MyReviews";
+import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Main />,
-    errorElement: <div>404</div>,
+    errorElement: <ErrorPage/>,
     children: [
       {
         index: true,
@@ -57,10 +59,14 @@ const router = createBrowserRouter([
   // Dashboard
   {
     path: 'Dashboard',
-    element: <Dashboard />,
+    element: (
+      <PrivateRoute>
+        <Dashboard />
+      </PrivateRoute>
+    ),
     children: [
       {
-        index: true,
+        path: 'Dashboard/admin-profile',
         element: <AdminProfile />,
       },
       {
@@ -85,12 +91,12 @@ const router = createBrowserRouter([
       },
       {
         path: 'Dashboard/property-bought',
-        element: <PropertyBought/>
+        element: <PropertyBought />,
       },
       {
         path: 'Dashboard/my-reviews',
-        element: <MyReviews/>
-      }
+        element: <MyReviews />,
+      },
     ],
   },
 ]);

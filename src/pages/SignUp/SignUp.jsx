@@ -7,13 +7,17 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+const image_hosting_key = import.meta.env.VITE_API_HOSTING_KEY;
+const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 
 const SignUp = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [error, setError] = useState("")
-  const navigate = useNavigate()
-  const { createUser, googleLogin, githubLogin } = useAuth();
+  const navigate = useNavigate();
+  const axiosPublic = useAxiosPublic();
+  const { createUser, googleLogin, githubLogin, updateUser } = useAuth();
   // login with google
   const handleGoogle = () => {
     googleLogin()
@@ -44,25 +48,50 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = data => {
-    const {  email, password, confirmPassword } = data;
-    if (!password > 6) {
-      setError("password must have 6 characters")
-      return;
+  const onSubmit = async (data) => {
+
+ const { email, password, confirmPassword, name,  } = data;
+
+    const imageFile = { image: data.image[0] }
+    const res = await axiosPublic.post(image_hosting_api, imageFile, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    } )
+    console.log(res.data);
+    if (res.data.success) {
+      const image = res.data.display_url;
+      // now send the image url
+ if (!password > 6) {
+   setError('password must have 6 characters');
+   return;
+ }
+ if (password !== confirmPassword) {
+   setError("password did't match");
+   toast.error("password did't match");
+   return;
+ }
+ createUser(email, password)
+   .then((res) => {
+     console.log(res.user);
+
+     updateUser(name, image).then(() => {
+       navigate('/');
+     });
+   })
+   .catch((error) => {
+     console.log(error);
+   });
+ console.log(data);
+ setError(' ');
     }
-    if (password !== confirmPassword) {
-      setError("password did't match")
-      toast.error("password did't match")
-      return;
-    }
-    createUser(email, password).then(res => {
-      console.log(res.user);
-      navigate('/')
-    }).catch(error => {
-      console.log(error);
-    })
-    console.log(data);
-    setError(" ")
+
+
+
+
+
+   
+   
   };
   return (
     <div className=" max-w-screen-xl mx-auto h-[95vh] my-4">
@@ -151,6 +180,17 @@ const SignUp = () => {
           </span>
         </div>
 
+        <div className="flex flex-col space-y-2 w-full lg:w-1/2 ">
+          <span>
+            Select Photo<span className="text-orange-500">*</span>
+          </span>
+          <input
+            className="border px-2 py-2 outline-none"
+            type="file"
+            {...register('image', { required: true })}
+            placeholder="Type Your Password*"
+          />
+        </div>
         <button className=" py-3 rounded w-full lg:w-1/2 bg-orange-500 text-white font-bold font-space outline-none">
           REGISTER NOW
         </button>

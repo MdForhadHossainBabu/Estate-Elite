@@ -14,7 +14,7 @@ const ManageUsers = () => {
    return res.data;
   }
 })
- console.log(users);
+ // console.log(users);
  
  // handleAgent
  const handleAgent = user => {
@@ -103,7 +103,7 @@ const ManageUsers = () => {
                    ) : (
                      <button
                        onClick={() => handleAgent(item)}
-                       className="btn text-xl bg-rose-500"
+                       className="btn text-xl text-red-600"
                      >
                        <FaUser/>
                      </button>
@@ -111,7 +111,7 @@ const ManageUsers = () => {
                  </td>
                  <th>
                    {item.role === 'admin' ? (
-                     <button className="btn font-bold font-fira">Admin</button>
+                     <button className={`btn font-extrabold font-fira ${item.role === 'admin' && ' bg-green-500 text-white '}`}>Admin</button>
                    ) : (
                      <button
                        onClick={() => handleAdmin(item)}

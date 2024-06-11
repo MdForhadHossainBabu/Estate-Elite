@@ -71,7 +71,7 @@ const Wishlist = () => {
             <h1 className="text-4xl font-bold font-space text-rose-500 text-center">
               Wishlist
             </h1>
-            <p className="text-center pt-4 text-balance">
+            <p className="text-center pt-4 text-balance font-fira">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam
               corporis labore quis doloribus numquam possimus. Quo harum non
               blanditiis neque.
@@ -122,6 +122,7 @@ const Wishlist = () => {
                       <input
                         className="outline-none py-2 px-2 w-full disabled cursor-not-allowed font-serif border border-green-500 rounded-md"
                         type="text"
+                        disabled
                         defaultValue={user?.photoURL}
                         {...register('agent_image', { required: true })}
                         id=""
@@ -151,7 +152,7 @@ const Wishlist = () => {
                 />
               </div>
               <div className="flex w-1/2 flex-col space-y-2">
-                <label>Property Title : </label>
+                <label>Verification Status : </label>
                 <select
                   className="outline-none py-2 px-2 font-serif border border-green-500 rounded-md"
                   defaultValue={`value`}
@@ -172,23 +173,18 @@ const Wishlist = () => {
                 <input
                   className="border border-green-400 px-2 py-2 cursor-not-allowed rounded-md"
                   type="text"
+                  disabled
                   defaultValue={user?.displayName}
                 />
               </div>
               <div className="flex flex-col w-1/2 space-y-3">
-                <label>Property Name : </label>
-                <input
-                  className="border border-green-500 px-3 py-2 rounded-md"
-                  type="text"
-                  {...register('property_name', { required: true })}
-                  id=""
-                />
+                <div className="flex flex-col gap-2 font-bold">
+                  <label>Property Image: </label>
+                  <input className='border py-1 px-2 rounded-lg border-green-400' {...register('property_image')} type="file" />
+                </div>
               </div>
             </div>
-            <div className='flex flex-col gap-2 font-bold px-4 pt-3'>
-              <label>Property Image: </label>
-              <input {...register('property_image')} type="file" />
-            </div>
+
             <div className="w-full flex justify-center mt-8">
               <button className=" py-2 text-xl uppercase font-poppins font-bold rounded-full bg-rose-500 text-white w-1/2">
                 submit

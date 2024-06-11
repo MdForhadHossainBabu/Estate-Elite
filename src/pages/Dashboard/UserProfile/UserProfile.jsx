@@ -4,10 +4,12 @@ import { FaTrashAlt } from "react-icons/fa";
 import useCart from "../../../hooks/useCart";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import useAuth from "../../../hooks/useAuth";
 
 
 const UserProfile = () => {
- const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(true);
+  const { user } = useAuth();
  const [cart, refetch] = useCart();
 //  console.log(cart);
  const axiosSecure = useAxiosSecure();
@@ -37,7 +39,9 @@ const UserProfile = () => {
       
     }
   });
- }
+  }
+  
+  console.log(user);
  return (
    <div>
      <div className="flex items-center gap-12 mt-12">
@@ -54,7 +58,7 @@ const UserProfile = () => {
              open && 'border-red-500'
            } border-2 text-center relative`}
          >
-           CART{' '}
+           CART
            {cart.length > 0 && (
              <span className="border-2 absolute -top-2  w-6 rounded-full h-6  bg-red-500 font-bold text-white ">
                {cart.length}
@@ -130,7 +134,13 @@ const UserProfile = () => {
          </div>
        </div>
      ) : (
-       <div className="border-2 mt-6">profile section</div>
+         <div className="border-2 mt-6">
+           
+           <div className="h-52 border-2 w-1/2 mx-auto mb-2 bg-rose-500 rounded-b-full relative">
+             <img className="rounded-full border-4 right-52 top-32 bg-black p-1 absolute" src={user.photoURL} alt="" />
+             
+           </div>
+         </div>
      )}
    </div>
  );

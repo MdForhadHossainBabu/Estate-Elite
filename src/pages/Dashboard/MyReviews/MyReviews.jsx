@@ -28,7 +28,7 @@ const MyReviews = () => {
  return (
    <div className="border-2 font-fira border-rose-500 my-12 max-w-screen-sm mx-auto">
      <span className='w-3/4 mx-auto px-4 pt-4'>Description :{review && <span>{review.description}</span>}</span>
-     {cart.slice(1, 2).map((item) => (
+     {cart.slice(0, 1).map((item) => (
        <div key={item._id}>
          <div>
            <span className="font-bold text-3xl flex justify-center mt-4 font-fira">

@@ -3,7 +3,7 @@ import useBought from "../../../hooks/useBought";
 
 const PropertyBought = () => {
  const [cart] = useBought();
- console.log(cart);
+//  console.log(cart);
  return (
    <div className="border-2 my-4 py-2">
      <h1 className="text-center font-bold font-poppins uppercase text-rose-500 text-4xl my-4">
