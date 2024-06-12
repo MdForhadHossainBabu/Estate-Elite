@@ -1,4 +1,4 @@
-# React + Vite
+
 Recently I used to this website react router, react router dom, react helmet async, many others
 
 
@@ -12,16 +12,16 @@ Recently I used to this website react router, react router dom, react helmet asy
 - [Swiper js](https://swiperjs.com/)
 
 
-# I use to other plugin
+ I use to other plugin
 - [React Hook Form](https://www.react-hook-form.com/)
 - [React Hot Toast](https://react-hot-toast.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
 - [Tailwind css](https://tailwindcss.com/)
  
 
- # Authentication
+ Authentication
  - [Firebase](https://firebase.google.com/)
 
 
-# deploy client Side 
+ deploy client Side 
 - [Firebase](https://firebase.google.com/)
