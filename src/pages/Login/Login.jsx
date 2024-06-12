@@ -6,6 +6,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { FaEye, FaEyeSlash, FaGithub } from 'react-icons/fa';
 import { useState } from "react";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -63,6 +64,11 @@ const Login = () => {
   
  return (
    <div className="max-w-screen-xl mx-auto h-[95vh] my-4">
+     <Helmet>
+       <title>
+         Estate Elite | LOGIN
+       </title>
+     </Helmet>
      <h2 className="text-4xl font-bold font-space text-center text-orange-500 my-4 mt-12">
        Login Now
      </h2>

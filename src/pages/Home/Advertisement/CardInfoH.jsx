@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 
@@ -7,6 +8,9 @@ const CardInfoH = ({ cardInfo }) => {
   
  return (
    <Link className="" to={`/cardInfoDetails/${_id}`}>
+     <Helmet>
+       <title>Estate Elite | Details</title>
+     </Helmet>
      <div className="border-2 p-2 bg-slate-200 dark:bg-slate-950 dark:border-yellow-400 rounded-lg drop-shadow-2xl shadow-2xl ">
        <figure>
          <img

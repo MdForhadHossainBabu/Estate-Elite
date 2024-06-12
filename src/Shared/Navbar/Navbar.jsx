@@ -142,7 +142,7 @@ onWindowMatch()
                />
              )}
            </div>
-           <div>
+           <div className="flex items-center">
              {options.map((opt) => (
                <button
                  onClick={() => setTheme(opt.text)}
@@ -154,6 +154,11 @@ onWindowMatch()
                  <ion-icon name={opt.icon}></ion-icon>
                </button>
              ))}
+             <h1
+             onClick={()=>setIsOpen(!isOpen)}
+               className="text-2xl md:hidden lg:hidden font-bold ml-3 mr-3">
+              {isOpen ? <HiMiniXMark/> : <GiHamburgerMenu/>}
+             </h1>
            </div>
          </div>
 

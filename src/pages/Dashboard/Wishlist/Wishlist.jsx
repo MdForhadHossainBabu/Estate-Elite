@@ -3,6 +3,7 @@ import useAuth from '../../../hooks/useAuth';
 import useAxiosSecure from './../../../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
 import useAxiosPublic from './../../../hooks/useAxiosPublic';
+import { Helmet } from 'react-helmet-async';
 
 // watch input value by passing the name of it
 
@@ -64,6 +65,11 @@ const Wishlist = () => {
 
   return (
     <div className="">
+      <Helmet>
+        <title>
+          Estate Elite | Dashboard | Wishlist 
+        </title>
+      </Helmet>
       {/* from 1 */}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="border dark:border-yellow-500 bg-slate-300 dark:bg-slate-900 dark:text-white py-12 w-full h-[100vh] space-y-4 font-mono flex flex-col">

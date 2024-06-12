@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useAuth from "../../../hooks/useAuth";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 const UserProfile = () => {
@@ -70,6 +71,11 @@ const UserProfile = () => {
      {/* profile section */}
      {open ? (
        <div className="border-2 my-6">
+         <Helmet>
+           <title>
+             Estate Elite | Dashboard | My profile
+           </title>
+         </Helmet>
          <SectionTitle subHeading="My cart" />
          <h1 className="text-center font-extrabold text-4xl font-nunito">
            My Cart

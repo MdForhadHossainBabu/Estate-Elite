@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { Helmet } from "react-helmet-async";
 const image_hosting_key = import.meta.env.VITE_API_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
@@ -95,6 +96,11 @@ const SignUp = () => {
   };
   return (
     <div className=" max-w-screen-xl mx-auto h-[95vh] my-4">
+      <Helmet>
+        <title>
+          Estate Elite | REGISTER 
+        </title>
+      </Helmet>
       <h2 className="text-4xl font-bold font-space text-center text-orange-500 my-4 mt-12">
         Register Now
       </h2>

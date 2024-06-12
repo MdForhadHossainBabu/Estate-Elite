@@ -5,12 +5,18 @@ import { FcStatistics } from 'react-icons/fc';
 import {  FaArrowLeft,  FaList,  FaSellcast,  FaShopify, FaStar, FaStreetView, FaUser, FaUsers } from 'react-icons/fa';
 import {  Link, NavLink, Outlet } from 'react-router-dom';
 import useAdmin from '../../../hooks/useAdmin';
+import { Helmet } from 'react-helmet-async';
 const Dashboard = () => {
  const [open, setOpen] = useState(true)
  const [isAdmin] = useAdmin();
 //  console.log(isAdmin);
  return (
    <div className="flex gap-2 max-w-screen-xl mx-auto ">
+     <Helmet>
+       <title>
+         Estate Elite | Dashboard
+       </title>
+     </Helmet>
      <div className="flex items-center flex-col justify-between h-screen bg-gray-800 dark:bg-blue-900 bg-opacity-40 pb-6">
        <div
          className={`${open ? 'w-60' : 'w-24'} duration-500 h-full  relative`}

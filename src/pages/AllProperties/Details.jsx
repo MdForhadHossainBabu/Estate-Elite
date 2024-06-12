@@ -4,6 +4,7 @@ import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { useState } from "react";
 import Modal from "../../components/Modal";
+import { Helmet } from "react-helmet-async";
  
 
 const Details = () => {
@@ -50,6 +51,11 @@ const [isOpen, setIsOpen] = useState(false)
  return (
    <>
      <div className="border-2 p-2 bg-slate-200 rounded-lg drop-shadow-2xl shadow-2xl space-y-3 py-4 w-1/2 mx-auto my-12">
+       <Helmet>
+         <title>
+           Estate Elite | All Properties | Details
+         </title>
+       </Helmet>
        <div className="bg-transparent">{isOpen ? <Modal /> : ''}</div>
        <figure>
          <img className="rounded-lg" src={property_image} alt="photo" />

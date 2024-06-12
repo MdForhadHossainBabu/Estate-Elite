@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import AllPropertiesInfo from "./AllPropertiesInfo";
+import { Helmet } from "react-helmet-async";
 
 const AllProperties = () => {
  const [properties, setProperties] = useState([]);
@@ -11,6 +12,11 @@ const AllProperties = () => {
  },[])
  return (
    <div className="dark:text-white dark:bg-slate-900">
+     <Helmet>
+       <title>
+         Estate Elite | All Properties
+       </title>
+     </Helmet>
      <h2 className="text-3xl font-bold text-center uppercase font-space text-rose-500">
        All Properties item{' '}
      </h2>

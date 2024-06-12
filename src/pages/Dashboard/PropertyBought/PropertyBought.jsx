@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import useBought from "../../../hooks/useBought";
 
 
@@ -6,6 +7,11 @@ const PropertyBought = () => {
 //  console.log(cart);
  return (
    <div className=" dark:bg-slate-900 my-4 py-2">
+     <Helmet>
+       <title>
+         Estate Elite | Dashboard | Property Buy
+       </title>
+     </Helmet>
      <h1 className="text-center font-bold font-poppins uppercase text-rose-500 text-4xl my-4">
        Property Bought
      </h1>
