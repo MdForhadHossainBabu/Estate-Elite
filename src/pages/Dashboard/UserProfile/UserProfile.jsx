@@ -5,12 +5,13 @@ import useCart from "../../../hooks/useCart";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useAuth from "../../../hooks/useAuth";
+import { Link } from "react-router-dom";
 
 
 const UserProfile = () => {
   const [open, setOpen] = useState(true);
   const { user } = useAuth();
- const [cart, refetch] = useCart();
+ const [cart, refetch, isPending] = useCart();
 //  console.log(cart);
  const axiosSecure = useAxiosSecure();
  const handleDelete = id => {
@@ -41,7 +42,6 @@ const UserProfile = () => {
   });
   }
   
-  console.log(user);
  return (
    <div>
      <div className="flex items-center gap-12 mt-12">
@@ -89,9 +89,11 @@ const UserProfile = () => {
              </h1>
            </div>
            <div>
-             <button className="border-2 px-6 py-1 rounded text-2xl font-bold uppercase font-space text-white bg-green-500">
-               pay
-             </button>
+             <Link to="/payment">
+               <button disabled={!cart.length}  className="border-2 px-6 py-1 rounded text-2xl font-bold uppercase font-space text-white bg-green-500">
+                 pay
+               </button>
+             </Link>
            </div>
          </div>
          {/* tabular format */}
@@ -108,39 +110,52 @@ const UserProfile = () => {
                    <th>Action</th>
                  </tr>
                </thead>
-               <tbody>
-                 {/* row 1 */}
-                 {cart.map((item, index) => (
-                   <tr key={item._id}>
-                     <th>{++index}</th>
-                     <td>
-                       <img src={item.image} className="size-10 p-1 border-2 border-red-400 rounded-full" alt="" />
-                     </td>
-                     <td>{item.name}</td>
-                     <td>{item.price_range}</td>
-                     <th>
-                       <button
-                         onClick={() => handleDelete(item._id)}
-                         className="btn bg-red-500 text-lg text-white"
-                       >
-                         <FaTrashAlt />
-                       </button>
-                     </th>
-                   </tr>
-                 ))}
-               </tbody>
+
+               {cart && (
+                 <tbody>
+                   {/* row 1 */}
+                   {cart.map((item, index) => (
+                     <tr key={item._id}>
+                       <th>{++index}</th>
+                       <td>
+                         <img
+                           src={item.image}
+                           className="size-10 p-1 border-2 border-red-400 rounded-full"
+                           alt=""
+                         />
+                       </td>
+                       <td>{item.name}</td>
+                       <td>{item.price_range}</td>
+                       <th>
+                         {isPending ? (
+                           'loading...'
+                         ) : (
+                           <button
+                             onClick={() => handleDelete(item._id)}
+                             className="btn bg-red-500 text-lg text-white"
+                           >
+                             <FaTrashAlt />
+                           </button>
+                         )}
+                       </th>
+                     </tr>
+                   ))}
+                 </tbody>
+               )}
              </table>
            </div>
          </div>
        </div>
      ) : (
-         <div className="border-2 mt-6">
-           
-           <div className="h-52 border-2 w-1/2 mx-auto mb-2 bg-rose-500 rounded-b-full relative">
-             <img className="rounded-full border-4 right-52 top-32 bg-black p-1 absolute" src={user.photoURL} alt="" />
-             
-           </div>
+       <div className="border-2 mt-6">
+         <div className="h-52 border-2 w-1/2 mx-auto mb-2 bg-rose-500 rounded-b-full relative">
+           <img
+             className="rounded-full border-4 right-52 top-32 bg-black p-1 absolute"
+             src={user.photoURL}
+             alt=""
+           />
          </div>
+       </div>
      )}
    </div>
  );

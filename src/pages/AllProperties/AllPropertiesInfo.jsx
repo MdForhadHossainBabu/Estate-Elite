@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 
 const AllPropertiesInfo = ({properties}) => {
- console.log(properties);
+//  console.log(properties);
  const {
    agent_name,
    price_range,
@@ -11,14 +11,14 @@ const AllPropertiesInfo = ({properties}) => {
    verification_status,
    _id,
    property_image,
- } = properties;
+  } = properties;
+  // console.log(property_image);
  return (
-   <div className="border-2 p-2 bg-slate-200 rounded-lg drop-shadow-2xl shadow-2xl space-y-3 py-4">
+   <div className="border-2 p-2 bg-slate-200 dark:text-white dark:bg-slate-900 dark:border-red-500 rounded-lg drop-shadow-2xl shadow-2xl space-y-3 py-4">
      <figure>
        <img
-         className="rounded-lg"
+         className="rounded-lg h-64 w-full"
          src={
-           'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg' ||
            property_image
          }
          alt="photo"

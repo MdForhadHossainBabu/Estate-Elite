@@ -1,9 +1,9 @@
 
 import { useState } from 'react';
 import { FiLogOut } from 'react-icons/fi';
-
+import { FcStatistics } from 'react-icons/fc';
 import {  FaArrowLeft,  FaList,  FaSellcast,  FaShopify, FaStar, FaStreetView, FaUser, FaUsers } from 'react-icons/fa';
-import {  NavLink, Outlet } from 'react-router-dom';
+import {  Link, NavLink, Outlet } from 'react-router-dom';
 import useAdmin from '../../../hooks/useAdmin';
 const Dashboard = () => {
  const [open, setOpen] = useState(true)
@@ -11,7 +11,7 @@ const Dashboard = () => {
 //  console.log(isAdmin);
  return (
    <div className="flex gap-2 max-w-screen-xl mx-auto ">
-     <div className="flex items-center flex-col justify-between h-screen bg-gray-800 bg-opacity-40 pb-6">
+     <div className="flex items-center flex-col justify-between h-screen bg-gray-800 dark:bg-blue-900 bg-opacity-40 pb-6">
        <div
          className={`${open ? 'w-60' : 'w-24'} duration-500 h-full  relative`}
        >
@@ -27,13 +27,15 @@ const Dashboard = () => {
 
          {/* first heading */}
          <div className="mt-6">
-           <h1
-             className={`${
-               open ? 'text-4xl px-4' : 'text-normal'
-             } mx-auto font-bold text-center font-poppins duration-700 text-orange-600`}
-           >
-             Estate<span className="text-rose-500">Elite</span>
-           </h1>
+           <Link to="/">
+             <h1
+               className={`${
+                 open ? 'text-4xl px-4' : 'text-normal'
+               } mx-auto font-bold text-center font-poppins duration-700 text-orange-600`}
+             >
+               Estate<span className="text-rose-500">Elite</span>
+             </h1>
+           </Link>
            <div className="divider mx-3 divider-info"></div>
 
            {/* user route */}
@@ -41,7 +43,24 @@ const Dashboard = () => {
            <div className="mt-12 ">
              {/* route 1 */}
              <NavLink
+               to="/Dashboard"
+               end
+               className={({ isActive }) =>
+                 isActive ? 'text-white ' : '  text-black'
+               }
+             >
+               <h1
+                 className={`font-medium font-mono flex items-center gap-3 px-3 py-2`}
+               >
+                 <FcStatistics className={`${!open && 'mx-auto text-4xl'}`} />
+                 <span className={`${!open && 'hidden'} duration-700`}>
+                   Statistics
+                 </span>
+               </h1>
+             </NavLink>
+             <NavLink
                to="Dashboard/my-profile"
+               end
                className={({ isActive }) =>
                  isActive ? 'text-white ' : '  text-black'
                }
@@ -270,7 +289,7 @@ const Dashboard = () => {
        </div>
        <div className="border w-full items-center justify-center flex">
          <button className="border  py-2 font-bold text-lg text-white flex items-center gap-2 ">
-           <span className='text-2xl font-bold'>
+           <span className="text-2xl font-bold">
              <FiLogOut className="mr-2 font-bold text-rose-500" />
            </span>
            Logout

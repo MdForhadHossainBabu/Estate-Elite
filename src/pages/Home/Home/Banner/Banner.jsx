@@ -1,37 +1,49 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
-
-import img1 from '../../../../assets/01.jpg';
-import img2 from '../../../../assets/02.jpg';
-import img3 from '../../../../assets/03.png';
-import img4 from '../../../../assets/04.jpg';
+import img1 from '../../../../assets/state1.png';
+import img2 from '../../../../assets/state2.avif';
+import img3 from '../../../../assets/state3.jpeg';
+import img4 from '../../../../assets/state4.avif';
 import img5 from '../../../../assets/05.png';
-import img6 from '../../../../assets/06.png';
+import img6 from '../../../../assets/state6.avif';
+import { EffectFade, Navigation, Pagination } from 'swiper/modules';
+
 
 const Banner = () => {
   return (
-    <Carousel showArrows={true} showStatus={true} swipeable={true} verticalSwipe='natural' infiniteLoop={true}>
-      <div>
-        <img src={img1} />
-       
-      </div>
-      <div>
-        <img src={img2} />
-      </div>
-      <div>
-        <img src={img3} />
-      </div>
-      <div>
-        <img src={img4} />
-      </div>
-      <div>
-        <img src={img5} />
-      </div>
-      <div>
-        <img src={img6} />
-      </div>
-    </Carousel>
+    <Swiper
+      spaceBetween={30}
+      effect={'fade'}
+      navigation={true}
+      pagination={{
+        clickable: true,
+      }}
+      modules={[EffectFade, Navigation, Pagination]}
+      className="mySwiper"
+    >
+      <SwiperSlide>
+        <img className='w-full h-[90vh]' src={img1} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img className='w-full h-[90vh]' src={img2} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img className='w-full h-[90vh]' src={img3} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img className='w-full h-[90vh]' src={img4} />{' '}
+      </SwiperSlide>
+      <SwiperSlide>
+        <img className='w-full h-[90vh]' src={img5} />{' '}
+      </SwiperSlide>
+      <SwiperSlide>
+        <img className='w-full h-[90vh]' src={img6} />{' '}
+      </SwiperSlide>
+    </Swiper>
   );
 };
 

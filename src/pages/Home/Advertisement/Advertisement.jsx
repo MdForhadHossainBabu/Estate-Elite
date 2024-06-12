@@ -14,7 +14,7 @@ const Advertisement = () => {
  }, [])
 
  return (
-   <div>
+   <div className="dark:text-white text-black">
      <h2 className="text-center font-bold text-rose-500">
        -- Service of Advertisement --
      </h2>

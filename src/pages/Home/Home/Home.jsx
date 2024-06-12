@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Banner from "./Banner/Banner";
 import Advertisement from "../Advertisement/Advertisement";
 import Review from "../../LatestUserReview/Review";
+import Modal from "../../../components/Modal";
 
 
 const Home = () => {
@@ -12,7 +13,7 @@ const Home = () => {
      </Helmet>
    <Banner />
    <Advertisement />
-   <Review/>
+     <Review />
    </div>
  );
 };

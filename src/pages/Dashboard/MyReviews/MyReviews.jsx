@@ -21,10 +21,11 @@ const MyReviews = () => {
  console.log(review);
 
  
- const [cart] = useBought();
- // console.log(cart);
+ const [cart, , isPending] = useBought();
  const date = new Date().toLocaleTimeString();
- // console.log(date);
+  
+  if (isPending) return 'Loading...'
+  
  return (
    <div className="border-2 font-fira border-rose-500 my-12 max-w-screen-sm mx-auto">
      <span className='w-3/4 mx-auto px-4 pt-4'>Description :{review && <span>{review.description}</span>}</span>

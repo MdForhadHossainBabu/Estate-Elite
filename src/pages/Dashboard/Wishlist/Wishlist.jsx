@@ -63,10 +63,10 @@ const Wishlist = () => {
   };
 
   return (
-    <>
+    <div className=''>
       {/* from 1 */}
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="border-2 bg-slate-300 py-12 w-full h-[100vh] space-y-4 font-mono flex flex-col">
+        <div className="border dark:border-yellow-500 bg-slate-300 dark:bg-slate-900 dark:text-white py-12 w-full h-[100vh] space-y-4 font-mono flex flex-col">
           <div className="my-4">
             <h1 className="text-4xl font-bold font-space text-rose-500 text-center">
               Wishlist
@@ -193,7 +193,7 @@ const Wishlist = () => {
           </div>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 

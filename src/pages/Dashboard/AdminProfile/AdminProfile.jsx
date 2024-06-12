@@ -15,9 +15,9 @@ const AdminProfile = () => {
  console.log(adminProfile);
 
  return (
-  <div className="max-w-screen-sm mx-auto my-12">
-   asdfasdfa
-     {/* {adminProfile.map((item) => (
+  <div className="max-w-screen-sm mx-auto my-12 space-y-12">
+   
+     {adminProfile.map((item) => (
        <div key={item.role}>
          {item.role === 'admin' && (
            <div>
@@ -33,7 +33,7 @@ const AdminProfile = () => {
            </div>
          )}
        </div>
-     ))} */}
+     ))}
    </div>
  );
 };

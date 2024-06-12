@@ -11,7 +11,7 @@ const PrivateRoute = ({ children }) => {
   const { user, loading } = useAuth();
   if (loading) {
     return (
-      <p className='animate-spin flex flex-col items-center text-6xl my-32'>
+      <p className='animate-spin flex flex-col items-center text-9xl my-60 text-rose-600'>
         <TbFidgetSpinner />
       </p>
     );

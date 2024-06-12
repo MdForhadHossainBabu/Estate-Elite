@@ -17,12 +17,14 @@ import PropertyBought from "../pages/Dashboard/PropertyBought/PropertyBought";
 import MyReviews from "../pages/Dashboard/MyReviews/MyReviews";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import Statistics from "../pages/Dashboard/Dashboard/Statistics/Statistics";
+import Payment from "../pages/Dashboard/Dashboard/Payment/Payment";
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Main />,
-    errorElement: <ErrorPage/>,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -30,18 +32,30 @@ const router = createBrowserRouter([
       },
       {
         path: 'all-properties',
-        element: <AllProperties />,
+        element: (
+          <PrivateRoute>
+            <AllProperties />
+          </PrivateRoute>
+        ),
       },
       {
         path: 'details/:id',
-        element: <Details />,
+        element: (
+          <PrivateRoute>
+            <Details />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_API_URL}/properties/${params.id}`),
       },
 
       {
         path: 'cardInfoDetails/:id',
-        element: <SingleInfo />,
+        element: (
+          <PrivateRoute>
+            <SingleInfo />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_API_URL}/advertisement/${params.id}`),
       },
@@ -55,7 +69,10 @@ const router = createBrowserRouter([
     path: 'login',
     element: <Login />,
   },
-
+  {
+    path: 'payment',
+    element: <Payment />,
+  },
   // Dashboard
   {
     path: 'Dashboard',
@@ -69,6 +86,7 @@ const router = createBrowserRouter([
         path: 'Dashboard/admin-profile',
         element: <AdminProfile />,
       },
+
       {
         path: 'Dashboard/manage-properties',
         element: <ManageProperties />,
@@ -86,12 +104,16 @@ const router = createBrowserRouter([
         element: <Wishlist />,
       },
       {
-        path: 'Dashboard/my-profile',
-        element: <UserProfile />,
+        index: true,
+        element: <Statistics />,
       },
       {
         path: 'Dashboard/property-bought',
         element: <PropertyBought />,
+      },
+      {
+        path: 'Dashboard/my-profile',
+        element: <UserProfile />,
       },
       {
         path: 'Dashboard/my-reviews',

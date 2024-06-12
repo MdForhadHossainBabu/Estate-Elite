@@ -5,13 +5,13 @@ const Review = () => {
  const [cards, setCards] = useState([]);
 //  console.log(cards);
  useEffect(() => {
-   fetch('review.json')
+   fetch(`${import.meta.env.VITE_API_URL}/review`)
      .then(res => res.json())
      .then(data => setCards(data));
  }, []);
  return (
    <>
-     <div>
+     <div className="dark:text-white dark:bg-slate-900">
        <h1 className="text-center font-space text-2xl drop-shadow-2xl shadow-2xl font-bold text-orange-500">
          Latest User Review
        </h1>

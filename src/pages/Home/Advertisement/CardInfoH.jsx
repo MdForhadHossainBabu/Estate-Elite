@@ -6,13 +6,12 @@ const CardInfoH = ({ cardInfo }) => {
   const { property_image, property_location, verification_status, price_range, _id } = cardInfo;
   
  return (
-   <Link to={`/cardInfoDetails/${_id}`}>
-     <div className="border-2 p-2 bg-slate-200 rounded-lg drop-shadow-2xl shadow-2xl ">
+   <Link className="" to={`/cardInfoDetails/${_id}`}>
+     <div className="border-2 p-2 bg-slate-200 dark:bg-slate-950 dark:border-yellow-400 rounded-lg drop-shadow-2xl shadow-2xl ">
        <figure>
          <img
-           className="rounded-lg"
+           className="rounded-lg w-full h-52"
            src={
-             'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg' ||
              property_image
            }
            alt="photo"

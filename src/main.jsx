@@ -11,7 +11,7 @@ const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <div className="max-w-screen-xl mx-auto">
+    <div className="max-w-screen-xl mx-auto dark:text-gray-100 dark:bg-slate-900 duration-100">
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
           <AuthProvider>

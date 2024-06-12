@@ -70,7 +70,7 @@ const ManageUsers = () => {
  }
 
  return (
-   <div className="border-4 my-10 mx-6">
+   <div className=" my-10 mx-6">
      <SectionTitle heading="Manage All Users" subHeading="How Many!!" />
      <h1 className="text-xl font-bold font-fira uppercase mt-12">
        Total Users : {users.length}
@@ -90,7 +90,7 @@ const ManageUsers = () => {
                <th className="uppercase font-bold font-fira">action</th>
              </tr>
            </thead>
-           <tbody>
+           <tbody >
              {/* row 1 */}
              {users.map((item, index) => (
                <tr key={item.email}>
