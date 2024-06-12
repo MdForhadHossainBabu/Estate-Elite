@@ -77,7 +77,6 @@ const Navbar = () => {
   );
   const element = document.documentElement;
   const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
-console.log(darkQuery);
 
   function onWindowMatch() {
     if (localStorage.theme === "dark" || (!("theme" in localStorage) && darkQuery.matches)) {

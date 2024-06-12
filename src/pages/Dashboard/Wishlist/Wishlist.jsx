@@ -63,7 +63,7 @@ const Wishlist = () => {
   };
 
   return (
-    <div className=''>
+    <div className="">
       {/* from 1 */}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="border dark:border-yellow-500 bg-slate-300 dark:bg-slate-900 dark:text-white py-12 w-full h-[100vh] space-y-4 font-mono flex flex-col">
@@ -72,9 +72,12 @@ const Wishlist = () => {
               Wishlist
             </h1>
             <p className="text-center pt-4 text-balance font-fira">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam
-              corporis labore quis doloribus numquam possimus. Quo harum non
-              blanditiis neque.
+              For the discerning elite, the estate wishlist features expansive
+              properties with panoramic views, state-of-the-art amenities, and
+              unparalleled privacy, ensuring a lifestyle of ultimate luxury and
+              comfort. These estates are meticulously designed with opulent
+              interiors, lush gardens, and advanced security systems, catering
+              to those who demand nothing but the best
             </p>
           </div>
           <div className="flex flex-col">
@@ -180,7 +183,11 @@ const Wishlist = () => {
               <div className="flex flex-col w-1/2 space-y-3">
                 <div className="flex flex-col gap-2 font-bold">
                   <label>Property Image: </label>
-                  <input className='border py-1 px-2 rounded-lg border-green-400' {...register('property_image')} type="file" />
+                  <input
+                    className="border py-1 px-2 rounded-lg border-green-400"
+                    {...register('property_image')}
+                    type="file"
+                  />
                 </div>
               </div>
             </div>

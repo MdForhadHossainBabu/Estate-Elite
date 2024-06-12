@@ -1,8 +1,27 @@
 # React + Vite
+Recently I used to this website react router, react router dom, react helmet async, many others
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+- [React Router Dom](https://reactrouter.com/en/main)
+- [React helmet async](https://github.com/staylor/react-helmet-async)
+- [React humber Menu](https://github.com/codebucks27/reactjs-hamburger-menu)
+- [React Awesome Slider](https://github.com/rcaferati/react-awesome-slider)
+- [Axios](https://axios-http.com/docs/intro)
+- [Tanstack Query](https://tanstack.com/query/latest)
+- [Sweet Alert 2](https://sweetalert2.github.io/)
+- [Swiper js](https://swiperjs.com/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+# I use to other plugin
+- [React Hook Form](https://www.react-hook-form.com/)
+- [React Hot Toast](https://react-hot-toast.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [Tailwind css](https://tailwindcss.com/)
+ 
+
+ # Authentication
+ - [Firebase](https://firebase.google.com/)
+
+
+# deploy client Side 
+- [Firebase](https://firebase.google.com/)

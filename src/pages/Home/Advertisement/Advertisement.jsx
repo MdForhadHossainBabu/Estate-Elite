@@ -7,10 +7,10 @@ import CardInfoH from "./CardInfoH";
 const Advertisement = () => {
  const [cards, setCards] = useState([]);
 //  console.log(cards);
- useEffect(() => {
-  fetch(`http://localhost:5000/advertisement`)
-    .then(res => res.json())
-    .then(data => setCards(data));
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL}/advertisement`)
+      .then((res) => res.json())
+      .then((data) => setCards(data));
  }, [])
 
  return (
